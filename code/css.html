@@ -1,0 +1,85 @@
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 1.25rem;
+      font-family: sans-serif;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1.25rem;
+    }
+
+    .box {
+      margin: 0 0 1.25rem;
+    }
+
+    [style*="--w:"] {
+      aspect-ratio: 1;
+      width: var(--w);
+      background: red;
+    }
+
+    @media (min-width: 640px) {
+      [style*="--w-sm:"] {
+        width: var(--w-sm);
+        background: orange;
+      }
+    }
+
+    @media (min-width: 768px) {
+      [style*="--w-md:"] {
+        width: var(--w-md);
+        background: yellow;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      [style*="--w-lg:"] {
+        width: var(--w-lg);
+        background: green;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p>I thought this trick would be popular before Tailwind took over.</p>
+
+  <div class="box" style="--w:80px;--w-sm:160px;--w-md:240px;--w-lg:320px;"></div>
+  <div class="box" style="--w:320px;--w-sm:240px;--w-md:160px;--w-lg:80px;"></div>
+
+  <code style="display: block; white-space: pre; background: black; color: white;">
+    &lt;style&gt;
+      [style*="--w:"] {
+        width: var(--w);
+      }
+
+      @media (min-width: 640px) {
+        [style*="--w-sm:"] {
+          width: var(--w-sm);
+        }
+      }
+
+      @media (min-width: 768px) {
+        [style*="--w-md:"] {
+          width: var(--w-md);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        [style*="--w-lg:"] {
+          width: var(--w-lg);
+        }
+      }
+    &lt;/style&gt;
+    &lt;div style="--w:80px;--w-sm:160px;--w-md:240px;--w-lg:320px;"&gt;&lt;/div&gt;
+    &lt;div style="--w:320px;--w-sm:240px;--w-md:160px;--w-lg:80px;"&gt;&lt;/div&gt;
+  </code>
+
+</body>
+
+</html>
